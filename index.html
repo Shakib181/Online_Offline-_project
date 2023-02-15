@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online- Offline Project</title>
+    <style>
+        h1{
+            text-align: center;
+            margin-top: 12rem;
+            font-size: 4rem;
+        }
+    </style>
+    
+</head>
+<body>
+   <h1 id="title"></h1>
+
+   <script>
+    var title = document.getElementById("title");
+    window.addEventListener("online", set);
+    window.addEventListener("offline", set);
+
+    function set(){
+        if(navigator.onLine){
+            title.innerHTML = "You are Online";
+            title.style.color = "blue";
+        }
+        else{
+            title.innerHTML = "You are Offline";
+            title.style.color = "green";
+        }
+    }
+    set();
+   </script>
+</body>
+</html>
